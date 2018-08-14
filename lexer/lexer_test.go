@@ -23,10 +23,10 @@ func TestSingleLineInput(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	l := New(input)
+	lex := New(input)
 
 	for i, tt := range tests {
-		tok := l.NextToken()
+		tok := lex.NextToken()
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf(
@@ -147,10 +147,10 @@ if (5 < 10) {
 		{token.EOF, ""},
 	}
 
-	l := New(input)
+	lex := New(input)
 
 	for i, tt := range tests {
-		tok := l.NextToken()
+		tok := lex.NextToken()
 
 		if tok.Type != tt.expectedType {
 			t.Fatalf(
